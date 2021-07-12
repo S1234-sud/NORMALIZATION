@@ -1,0 +1,294 @@
+package abs;
+
+public class BankAccount
+{
+	public static void main(String args[])
+	{
+		Account1 ac=new Account1(2462565,45000,"SJY&$35");
+		SavingAccount ac1=new SavingAccount();
+		CurrentAccount ac2=new CurrentAccount();
+		ac.display();
+
+		ac1.display();
+		ac2.display();
+				
+		
+	}
+}
+
+ class Account1 
+{
+	private int accountNo;
+	private int accountBalance;
+	private String accountPassword;
+    String bankName="SBI";
+      public Account1()
+      {
+    	  
+      }
+
+      public Account1(int accountNo,int accountBalance,String accountPassword)
+      {
+    	  this.accountNo=accountNo;
+    	  this.accountBalance=accountBalance;
+    	  this.accountPassword=accountPassword;
+      }
+	//private int accountNo;
+	public int getAccountNo() {
+		return accountNo;
+	}
+	public void setAccountNo(int accountNo) {
+		this.accountNo = accountNo;
+	}
+	public int getAccountBalance() {
+		return accountBalance;
+	}
+	public void setAccountBalance(int accountBalance) {
+		this.accountBalance = accountBalance;
+	}
+	public String getAccountPassword() {
+		return accountPassword;
+	}
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+	}
+      
+       
+	
+     void display()
+     {
+    	System.out.println("welcome to the "+bankName+" Bank"); 
+    	System.out.println("Your account no is:"+accountNo);
+    	System.out.println("YOur accoutn Balance is:"+accountBalance);
+    	System.out.println("Your accountPassword is:"+accountPassword);
+    }
+     
+}     
+    
+class SavingAccount extends Account1
+{
+	int minimumBalance=3000;
+	public SavingAccount()
+	{
+		super(2462565,45000,"SJY&$35");
+	
+	}
+	void display()
+	{
+		
+		System.out.println("Minimum balance amount is:"+minimumBalance);
+	}
+		
+}
+
+class CurrentAccount extends Account1
+{
+	int overdraftLimitAmount=10000000;
+	void display()
+	{
+		System.out.println("Overdrift balance amount is:"+overdraftLimitAmount);
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package abs;
+
+class main
+{
+	public static void main(String args[])
+	{
+		Account ac=new Account(2462565,45000,"SJY&$35");
+		
+		ac.display();
+	}
+}
+
+public class Account 
+{
+	private int accountNo;
+	private int accountBalance;
+	private String accountPassword;
+    String bankName="SBI";
+
+
+      public Account(int accountNo,int accountBalance,String accountPassword)
+      {
+    	  this.accountNo=accountNo;
+    	  this.accountBalance=accountBalance;
+    	  this.accountPassword=accountPassword;
+      }
+	//private int accountNo;
+	public int getAccountNo() {
+		return accountNo;
+	}
+	public void setAccountNo(int accountNo) {
+		this.accountNo = accountNo;
+	}
+	public int getAccountBalance() {
+		return accountBalance;
+	}
+	public void setAccountBalance(int accountBalance) {
+		this.accountBalance = accountBalance;
+	}
+	public String getAccountPassword() {
+		return accountPassword;
+	}
+	public void setAccountPassword(String accountPassword) {
+		this.accountPassword = accountPassword;
+	}
+      
+       
+	
+     void display()
+     {
+    	System.out.println("welcome to the "+bankName+" Bank"); 
+    	System.out.println("Your account no is:"+accountNo);
+    	System.out.println("YOur accoutn Balance is:"+accountBalance);
+    	System.out.println("Your accountPassword is:"+accountPassword);
+    }
+     
+}     
+    
+
+
+ 
+
+
+package abs;
+import java.io.*;
+import java.util.*;
+import java.lang.*;
+public class InningStatistics 
+{
+	public static void main(String args[])
+	{
+	//Scanner sc =new Scanner (System.in);
+		Random rn=new Random();
+		int total=0;
+		int zeros=0;
+		int ones=0;
+		int twos=0;
+		int threes=0;
+		int fours=0;
+		int sixes=0;
+		double rr=0;
+		
+	int run[]=new int[30];
+	for(int i:run)
+	{
+		run[i]=rn.nextInt(7);
+		total=total+run[i];
+		if(run[i]==0)
+			zeros++;
+		else if(run[i]==1)
+			ones++;
+		else if(run[i]==2)
+			twos++;
+		else if(run[i]==3)
+			threes++;
+		else if(run[i]==4)
+			fours++;
+		else if(run[i]==6)
+			sixes++;
+		
+		System.out.println(run[i]);
+	}
+	rr=total/30;
+	System.out.println("Total runs scored in 5 overs:"+total);
+	System.out.println("NO of 0's:"+zeros);
+	System.out.println("NO of 1's:"+ones);
+	System.out.println("NO of 2's:"+twos);
+	System.out.println("NO of 3's:"+threes);
+	System.out.println("NO of 4's:"+fours);
+	System.out.println("NO of 6's:"+sixes);
+	System.out.println("Strike Rate:"+total/30);
+	//System.out.println("hii");
+	
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package abs;
+
+public class ElectricityBill
+{
+	public static void main(String args[])
+	{
+		ElectricityBill elc=new ElectricityBill();
+		elc.bill(103);
+		elc.bill(302);
+		//ElectricityBill.bill(5);
+		//System.out.println("welcome, we are calculating your bill");
+		//System.out.println("units consumed="+unit);
+	//	System.out.println("Bill amount is="+amount);
+		
+		
+	}
+	
+	public double bill(int uni)
+	{
+		int unit=uni;
+		double price=1.2;
+		double price1=2;
+		double price2=3;
+		double amount=0;
+		System.out.println("welcome, we are calculating your bill");
+		System.out.println("units consumed="+unit);
+		if(unit<=100)
+			amount=(unit*price);
+			
+		
+			else if(unit>100 && unit<=300)
+		{
+			amount=(100*price);
+		    amount=amount+(unit-100)*price1;
+		    
+		}
+		else if(unit>300)	
+		{
+			amount=(100*price);
+			amount=amount+(200*price1);
+			amount=amount+(unit-300)*price2;
+			
+		}
+		System.out.println("Bill amount is="+amount);
+		System.out.println("thank you");
+		amount=0;
+		//System.out.println(unit);
+		return amount;
+	}
+
+}
